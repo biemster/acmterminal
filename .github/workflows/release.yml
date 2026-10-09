@@ -30,11 +30,26 @@ jobs:
       - name: Create environment configuration
         run: touch .env
 
-      - name: Decode debug keystore
+      - name: Setup debug keystore
         run: |
           if [ -f debug.keystore.base64 ]; then
+            echo "Decoding debug.keystore from base64..."
             base64 -d debug.keystore.base64 > debug.keystore
           fi
+          if [ ! -f debug.keystore ]; then
+            echo "debug.keystore not found. Generating default Android debug keystore..."
+            keytool -genkeypair \
+              -alias androiddebugkey \
+              -keypass android \
+              -keystore debug.keystore \
+              -storepass android \
+              -dname "CN=Android Debug,O=Android,C=US" \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000 \
+              -deststoretype pkcs12
+          fi
+          ls -la debug.keystore
 
       - name: Decode release keystore
         if: "${{ env.KEYSTORE_BASE64 != '' }}"
