@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Generic CDC ACM devices (Communication Device Class = 0x02) -->
+    <usb-device class="2" />
+
+    <!-- Standard Microcontroller CDC ACM USB IDs -->
+    <!-- STM32 Virtual COM Port (STMicroelectronics - Vendor: 0x0483, Product: 0x5740) -->
+    <usb-device vendor-id="1155" product-id="22336" />
+    <!-- Raspberry Pi RP2040 Pico (Vendor: 0x2E8A, Product: 0x000A) -->
+    <usb-device vendor-id="11914" product-id="10" />
+    <!-- Espressif CDC ACM (Vendor: 0x303A, Product: 0x1001) -->
+    <usb-device vendor-id="12346" product-id="4097" />
+    <!-- Espressif USB Serial/JTAG (Vendor: 0x303A, Product: 0x1002) -->
+    <usb-device vendor-id="12346" product-id="4098" />
+
+    <!-- Common USB-to-UART bridges -->
+    <!-- FTDI FT232R / FT2232 / FT4232 (Vendor: 0x0403) -->
+    <usb-device vendor-id="1027" />
+    <!-- Silicon Labs CP2102 / CP2104 / CP210x (Vendor: 0x10C4) -->
+    <usb-device vendor-id="4292" />
+    <!-- QinHeng CH340 / CH341 / CH343 / CH9102 (Vendor: 0x1A86) -->
+    <usb-device vendor-id="6790" />
+</resources>

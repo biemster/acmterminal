@@ -1,0 +1,6 @@
+{
+  "name": "ACM terminal",
+  "description": "Lightweight open-source USB serial terminal for CDC ACM devices and UART bridges with DTR/RTS hardware controls and customizable macros.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
